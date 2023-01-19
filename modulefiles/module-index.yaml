@@ -1,0 +1,22 @@
+module_index:
+  s7v3j5qvof5b3cyfx4rjiyije6qatq75:
+    path: /fs/cgd/data0/modules/modulefiles/gcc/9.3.0/esmf/develop
+    use_name: gcc/9.3.0/esmf/develop
+  4bqwlzdppxvfgni3sufminfnpiklqoch:
+    path: /fs/cgd/data0/modules/modulefiles/intel/20.0.1/hdf5/1.12.2
+    use_name: intel/20.0.1/hdf5/1.12.2
+  ixqregssqqppy2inuqcw265hrsltbolr:
+    path: /fs/cgd/data0/modules/modulefiles/gcc/9.3.0/mpi-serial/2.3.0
+    use_name: gcc/9.3.0/mpi-serial/2.3.0
+  uptfkklfhuqbl6a2rxz7bergx3j6nl52:
+    path: /fs/cgd/data0/modules/modulefiles/intel/20.0.1/mpi-serial/2.3.0
+    use_name: intel/20.0.1/mpi-serial/2.3.0
+  mckd2jm2ixmposxgylo4v7dvfpi3gkc7:
+    path: /fs/cgd/data0/modules/modulefiles/nag/7.0/mpi-serial/2.3.0
+    use_name: nag/7.0/mpi-serial/2.3.0
+  ap65uvbk4b4ehz4rvqiz6bb3znpei57z:
+    path: /fs/cgd/data0/modules/modulefiles/intel/20.0.1/netcdf-c/4.9.0
+    use_name: intel/20.0.1/netcdf-c/4.9.0
+  3ufeblu2xgvdmqi35g3sdpgqjbhvtrqu:
+    path: /fs/cgd/data0/modules/modulefiles/gcc/9.3.0/parallelio/2.5.8
+    use_name: gcc/9.3.0/parallelio/2.5.8

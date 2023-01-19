@@ -1,0 +1,29 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-01-18 14:18:23.724624
+##
+## netcdf-c@4.9.0%intel@20.0.1~dap~fsync~hdf4~jna+mpi+optimize~parallel-netcdf+pic+shared+zstd build_system=autotools arch=linux-centos7-skylake_avx512/ap65uvb
+##
+## Configure options: --enable-v2 --enable-utilities --enable-static --enable-largefile --enable-netcdf-4 --disable-fsync --enable-dynamic-loading --enable-shared --disable-dap ac_cv_lib_curl_curl_easy_setopt=no --enable-parallel4 --disable-jna --disable-pnetcdf CC=/cluster/mvapich2-2.3.3-intel-cluster-20.0.1/bin/mpicc --disable-hdf4 --with-plugin-dir=/home/jedwards/spack/opt/spack/linux-centos7-skylake_avx512/intel-20.0.1/netcdf-c-4.9.0-ap65uvbk4b4ehz4rvqiz6bb3znpei57z/plugins CFLAGS=-O2 -fPIC CPPFLAGS=-I/home/jedwards/spack/opt/spack/linux-centos7-skylake_avx512/intel-20.0.1/hdf5-1.12.2-4bqwlzdppxvfgni3sufminfnpiklqoch/include -I/home/jedwards/spack/opt/spack/linux-centos7-skylake_avx512/intel-20.0.1/zstd-1.5.2-mamiacmenhhoszlsrpopxghpvqigsvl2/include LDFLAGS=-L/home/jedwards/spack/opt/spack/linux-centos7-skylake_avx512/intel-20.0.1/hdf5-1.12.2-4bqwlzdppxvfgni3sufminfnpiklqoch/lib -L/home/jedwards/spack/opt/spack/linux-centos7-skylake_avx512/intel-20.0.1/zstd-1.5.2-mamiacmenhhoszlsrpopxghpvqigsvl2/lib LIBS=
+##
+
+
+module-whatis "NetCDF (network Common Data Form) is a set of software libraries and machine-independent data formats that support the creation, access, and sharing of array-oriented scientific data. This is the C distribution."
+
+proc ModulesHelp { } {
+puts stderr "NetCDF (network Common Data Form) is a set of software libraries and"
+puts stderr "machine-independent data formats that support the creation, access, and"
+puts stderr "sharing of array-oriented scientific data. This is the C distribution."
+}
+
+if { ![ is-loaded 'intel/20.0.1/hdf5/1.12.2' ] } {
+    puts stderr "Autoloading intel/20.0.1/hdf5/1.12.2"
+    module load intel/20.0.1/hdf5/1.12.2
+}
+conflict netcdf-c
+
+prepend-path PATH "/home/jedwards/spack/opt/spack/linux-centos7-skylake_avx512/intel-20.0.1/netcdf-c-4.9.0-ap65uvbk4b4ehz4rvqiz6bb3znpei57z/./bin"
+prepend-path MANPATH "/home/jedwards/spack/opt/spack/linux-centos7-skylake_avx512/intel-20.0.1/netcdf-c-4.9.0-ap65uvbk4b4ehz4rvqiz6bb3znpei57z/./share/man"
+prepend-path PKG_CONFIG_PATH "/home/jedwards/spack/opt/spack/linux-centos7-skylake_avx512/intel-20.0.1/netcdf-c-4.9.0-ap65uvbk4b4ehz4rvqiz6bb3znpei57z/./lib/pkgconfig"
+prepend-path CMAKE_PREFIX_PATH "/home/jedwards/spack/opt/spack/linux-centos7-skylake_avx512/intel-20.0.1/netcdf-c-4.9.0-ap65uvbk4b4ehz4rvqiz6bb3znpei57z/./"
+append-path HDF5_PLUGIN_PATH "/home/jedwards/spack/opt/spack/linux-centos7-skylake_avx512/intel-20.0.1/netcdf-c-4.9.0-ap65uvbk4b4ehz4rvqiz6bb3znpei57z/plugins"
+

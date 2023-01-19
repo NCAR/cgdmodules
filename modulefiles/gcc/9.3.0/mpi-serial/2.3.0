@@ -1,0 +1,17 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-01-18 14:18:23.596617
+##
+## mpi-serial@2.3.0%gcc@9.3.0 build_system=autotools fort-double-size=8 fort-real-size=4 patches=b090e1a arch=linux-centos7-skylake_avx512/ixqregs
+##
+
+
+module-whatis "A single processor implementation of the mpi library."
+
+proc ModulesHelp { } {
+puts stderr "A single processor implementation of the mpi library."
+}
+
+conflict mpi-serial
+
+prepend-path CMAKE_PREFIX_PATH "/home/jedwards/spack/opt/spack/linux-centos7-skylake_avx512/gcc-9.3.0/mpi-serial-2.3.0-ixqregssqqppy2inuqcw265hrsltbolr/./"
+

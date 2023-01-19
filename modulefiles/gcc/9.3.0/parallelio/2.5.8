@@ -1,0 +1,23 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-01-18 14:18:23.795431
+##
+## parallelio@2.5.8%gcc@9.3.0+fortran~ipo~logging~pnetcdf+shared~timing build_type=RelWithDebInfo arch=linux-centos7-skylake_avx512/3ufeblu
+##
+## Configure options: -DNetCDF_C_PATH:STRING=/home/jedwards/spack/opt/spack/linux-centos7-skylake_avx512/gcc-9.3.0/netcdf-c-4.8.1-bduext6l2oncqdcnv2mum6rqus4yx2mx -DNetCDF_Fortran_PATH:STRING=/home/jedwards/spack/opt/spack/linux-centos7-skylake_avx512/gcc-9.3.0/netcdf-fortran-4.5.4-czd5vp5af5rwktpyotqummh22rgw6jj7 -DUSER_CMAKE_MODULE_PATH:STRING=/tmp/jedwards/spack-stage/spack-stage-parallelio-2.5.8-3ufeblu2xgvdmqi35g3sdpgqjbhvtrqu/spack-src/CMake_Fortran_utils -DGENF90_PATH:STRING=/tmp/jedwards/spack-stage/spack-stage-parallelio-2.5.8-3ufeblu2xgvdmqi35g3sdpgqjbhvtrqu/spack-src/genf90 -DBUILD_SHARED_LIBS:BOOL=ON -DPIO_ENABLE_TIMING:BOOL=OFF
+##
+
+
+module-whatis "The Parallel IO libraries (PIO) are high-level parallel I/O C and Fortran libraries for applications that need to do netCDF I/O from large numbers of processors on a HPC system."
+
+proc ModulesHelp { } {
+puts stderr "The Parallel IO libraries (PIO) are high-level parallel I/O C and"
+puts stderr "Fortran libraries for applications that need to do netCDF I/O from large"
+puts stderr "numbers of processors on a HPC system."
+}
+
+conflict parallelio
+
+prepend-path CMAKE_PREFIX_PATH "/home/jedwards/spack/opt/spack/linux-centos7-skylake_avx512/gcc-9.3.0/parallelio-2.5.8-3ufeblu2xgvdmqi35g3sdpgqjbhvtrqu/./"
+setenv PIO_VERSION_MAJOR "2"
+setenv PIO_TYPENAME_VALID_VALUES "netcdf"
+

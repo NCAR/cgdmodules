@@ -1,0 +1,27 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-01-18 16:18:39.057136
+##
+## parallelio@2.5.10%intel@20.0.1+fortran~ipo~logging+mpi~pnetcdf~timing build_system=cmake build_type=RelWithDebInfo arch=linux-centos7-skylake_avx512/ouihd5s
+##
+## Configure options: -DNetCDF_C_PATH:STRING=/home/jedwards/spack/opt/spack/linux-centos7-skylake_avx512/intel-20.0.1/netcdf-c-4.9.0-ap65uvbk4b4ehz4rvqiz6bb3znpei57z -DUSER_CMAKE_MODULE_PATH:STRING=/tmp/jedwards/spack-stage/spack-stage-parallelio-2.5.10-ouihd5s7gyvz5jusckd77eins2r5pt53/spack-src/cmake -DGENF90_PATH:STRING=/tmp/jedwards/spack-stage/spack-stage-parallelio-2.5.10-ouihd5s7gyvz5jusckd77eins2r5pt53/spack-src/genf90 -DBUILD_SHARED_LIBS:BOOL=ON -DPIO_ENABLE_EXAMPLES:BOOL=OFF -DNetCDF_Fortran_PATH:STRING=/home/jedwards/spack/opt/spack/linux-centos7-skylake_avx512/intel-20.0.1/netcdf-fortran-4.6.0-k6u6ugm36vqdgsrv6xa6wxkrrygli66k -DPIO_ENABLE_TIMING:BOOL=OFF -DPIO_ENABLE_LOGGING:BOOL=OFF -DPIO_ENABLE_FORTRAN:BOOL=ON
+##
+
+
+module-whatis "The Parallel IO libraries (PIO) are high-level parallel I/O C and Fortran libraries for applications that need to do netCDF I/O from large numbers of processors on a HPC system."
+
+proc ModulesHelp { } {
+puts stderr "The Parallel IO libraries (PIO) are high-level parallel I/O C and"
+puts stderr "Fortran libraries for applications that need to do netCDF I/O from large"
+puts stderr "numbers of processors on a HPC system."
+}
+
+if { ![ is-loaded 'intel/20.0.1/netcdf-c/4.9.0' ] } {
+    puts stderr "Autoloading intel/20.0.1/netcdf-c/4.9.0"
+    module load intel/20.0.1/netcdf-c/4.9.0
+}
+conflict parallelio
+
+prepend-path CMAKE_PREFIX_PATH "/home/jedwards/spack/opt/spack/linux-centos7-skylake_avx512/intel-20.0.1/parallelio-2.5.10-ouihd5s7gyvz5jusckd77eins2r5pt53/./"
+setenv PIO_VERSION_MAJOR "2"
+setenv PIO_TYPENAME_VALID_VALUES "netcdf,netcdf4p,netcdf4c"
+

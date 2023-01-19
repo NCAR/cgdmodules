@@ -1,0 +1,30 @@
+#%Module1.0
+##
+##
+##
+
+module-whatis "The Earth System Modeling Framework (ESMF) is high-performance, flexible software infrastructure for building and coupling weather, climate, and related Earth science applications. The ESMF defines an architecture for composing complex, coupled modeling systems and includes data structures and utilities for developing individual models."
+
+proc ModulesHelp { } {
+puts stderr "The Earth System Modeling Framework (ESMF) is high-performance, flexible"
+puts stderr "software infrastructure for building and coupling weather, climate, and"
+puts stderr "related Earth science applications. The ESMF defines an architecture for"
+puts stderr "composing complex, coupled modeling systems and includes data structures"
+puts stderr "and utilities for developing individual models."
+}
+
+
+set mpilib mvapich2
+set mpiver 2.3.3
+set compiler nag
+set compver 6.2
+set opt g
+set esmfver 8.2.0
+set basedir /project/esmf/PROGS/esmf/$esmfver/$mpilib/$mpiver/$compiler/$compver
+
+conflict esmf
+
+prepend-path PATH "$basedir/bin"
+prepend-path CMAKE_PREFIX_PATH "$basedir"
+setenv ESMFMKFILE "$basedir/lib/libO/Linux.$compiler.64.$mpilib.default/esmf.mk"
+
